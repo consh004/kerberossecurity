@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+  <h:head>
+    <title>Facelet Title</title>
+  </h:head>
+  <h:body>
+    <h1> Index Page </h1> <br/>
+    <h:form id="indexForm">
+      Hello !!! 
+      The fact that you can see this page means you have successfully logged in. 
+      <p />
+      <h:link value="click For Admin Page - " outcome="/admin/adminOnly" 
+              rendered="#{request.isUserInRole('Admin')}" />
+      
+      <h:outputText value="Request method= #{request.getMethod()}" />
+      <h:outputText value="Request URI= #{request.getRequestURI()}" />
+      <h:outputText value="Request protocol= #{request.getProtocol()}" />
+      <h:outputText value="Servlet path= #{request.getServletPath()}" />
+      <h:outputText value="Path info= #{request.getPathInfo()}" />
+      <h:outputText value="Path translated= #{request.getPathTranslated()}" />
+      <h:outputText value="Query string= #{request.getQueryString()}" />
+      <h:outputText value="Content length= #{request.getContentLength()}" />
+      <h:outputText value="Content type= #{request.getContentType()}" />
+      <h:outputText value="Server name= #{request.getServerName()}" />
+      <h:outputText value="Server port= #{request.getServerPort()}" />
+      <h:outputText value="Remote user= #{request.getRemoteUser()}" />
+
+      <h:outputText value="Is User in Role 'Deputy' ? = #{request.isUserInRole("Deputy")}" />
+      <h:outputText value="Is User in Role 'Admin' ? = #{request.isUserInRole('Admin')}" />
+
+      <h:outputText value="Remote address= #{request.getRemoteAddr()}" />
+      <h:outputText value="Remote host= #{request.getRemoteHost()}" />
+      <h:outputText value="Scheme= #{request.getScheme()}" />
+      <h:outputText value="Authorization scheme= #{request.getAuthType()}" />
+      <h:outputText value="Request scheme= #{request.getScheme()}" />
+      <p />
+      <h:commandLink action="#{logoutHandler.signOut()}" value="Logout" title="Logout" />
+    </h:form>
+  </h:body>
+</html>
+
